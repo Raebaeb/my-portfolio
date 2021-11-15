@@ -3,7 +3,7 @@ import { projectList } from "../projectObjects";
 
 const Projects = () => {
   return (
-    <section>
+    <section id='projects'>
       {projectList.map((project) => {
         <ProjectCard project={project} />
       })}

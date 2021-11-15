@@ -15,7 +15,7 @@ function App() {
         <Route path='/' exact>
           <Home />
         </Route>
-        <Route path='/about'>
+        <Route path='/about-me'>
           <About />
         </Route>
         </main>

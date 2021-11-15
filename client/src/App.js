@@ -1,6 +1,7 @@
-import { Switch, Route } from 'react-router';
+import { Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './screens/Home';
+import About from './screens/About';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -13,6 +14,9 @@ function App() {
         <main>
         <Route path='/' exact>
           <Home />
+        </Route>
+        <Route path='/about'>
+          <About />
         </Route>
         </main>
       </Switch>

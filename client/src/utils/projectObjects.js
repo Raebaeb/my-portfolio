@@ -1,6 +1,6 @@
 export const projectList = [
 {
-  title: "chromatica",
+  title: "Chromatica",
   github: "https://github.com/Raebaeb/chromatica",
   url: "https://chromatica.netlify.app",
   desc: "A simple app that helps you pick a limited color palette. Built with React, CSS, Airtable and thecolorAPI.",
@@ -15,5 +15,5 @@ export const projectList = [
   title: "The Cub Club",
   github: "https://github.com/drachen2299/the-cub-club",
   url: "https://the-cub-club.herokuapp.com/",
-  desc: "A simple social MMO with custom made assets and graphics. Built with React, Node.js with Express/MongoDB, and SCSS.",
+  desc: "A simple social MMO with custom made assets and graphics. Built with React, Node.js with Express/MongoDB, and SCSS. Assets created with Adobe Photoshop and Aseprite.",
 }]

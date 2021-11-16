@@ -22,10 +22,10 @@ const Nav = () => {
           About Me
         </Link>
       )}
-      <a href="https://github.com/raebaeb" className='nav-link'>
+      <a href="https://github.com/raebaeb" className='nav-link github'>
         <img src={navClass === 'about-nav' ? githubLogoLight : githubLogoDark} alt="Link to my GitHub profile" />
       </a>
-      <a href="https://www.linkedin.com/in/rachel-l-perez/" className='nav-link'>
+      <a href="https://www.linkedin.com/in/rachel-l-perez/" className='nav-link linkedin'>
         <img src={navClass === "about-nav" ? linkedInLogoLight : linkedInLogoDark} alt="Link to my LinkedIn profile" />
       </a>
     </nav>

@@ -8,7 +8,18 @@ nav {
   align-items: center;
 
   img {
-    max-height: 2em;
+    height: 1.5em;
+  }
+}
+
+.github {
+  order: -1;
+}
+
+.about-nav{
+  background-color: abstracts.$blue;
+  a, a:visited {
+    color: white;
   }
 }
 
@@ -22,8 +33,12 @@ nav {
   font-family: abstracts.$large;
   font-size: 1.5em;
   margin: 0 auto;
+  display: none;
 }
 
 .nav-link {
   margin: 0 auto;
+  line-height: .5em;
+  font-size: 1.2em;
+  font-weight: 600;
 }

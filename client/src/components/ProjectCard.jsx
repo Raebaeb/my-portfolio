@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
 
-const ProjectCard = ({ project, img }) => {
+const ProjectCard = ({ project, img, className }) => {
   return (
-    <div className='project-container'>
-      <Link to={project.url} target='_blank' rel='noopener noreferrer' className='project-title'>{project.title}</Link> | <Link path={project.github} target='_blank' rel='noopener noreferrer' className='project-github'>GitHub</Link> 
+    <div className={`project-container ${className}`}>
+      <article><a href={project.url} target='_blank' rel='noopener noreferrer' className='project-title'>{project.title}</a> | <a path={project.github} target='_blank' rel='noopener noreferrer' className='project-github'>GitHub</a></article>
       <h4>{project.desc}</h4>
       <img src={img} alt={`${project.title} homepage`} />
     </div>

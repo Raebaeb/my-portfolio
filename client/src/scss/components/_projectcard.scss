@@ -1,6 +1,46 @@
+@use "../abstracts";
+
+.dark {
+  background-color: abstracts.$blue;
+  color: white;
+  a, a:visited {
+    color: white;
+  }
+}
+
+.light {
+  background-color: white;
+  color: abstracts.$dark;
+  a, a:visited {
+    color: abstracts.$dark;
+  }
+}
+
 .project-container {
   padding: 1em;
-  img {
-    width: 27ch;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  grid-template-areas:
+  "title"
+  "description"
+  "img";
+  grid-gap: 1em;
+  a {
+    grid-area: title;
+    margin: 0 auto;
   }
+  h4 {
+    margin: 0;
+    grid-area: description;
+  }
+  img {
+    width: 21em;
+    grid-area: img;
+  }
+  .project-title {
+    font-family: abstracts.$large;
+    font-size: 1.5em;
+  }
+  
 }

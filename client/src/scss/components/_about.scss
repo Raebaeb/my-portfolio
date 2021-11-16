@@ -1,0 +1,44 @@
+@use "../abstracts";
+
+#about-me {
+  display: grid;
+  grid-gap: 1em;
+  justify-items: center;
+  text-align: center;
+  grid-template-areas:
+  "links"
+  "title"
+  "images"
+  "text";
+  padding: 1em;
+  h2 {
+    grid-area: title;
+    font-family: abstracts.$large;
+    margin: 0;
+  }
+  a, a:visited {
+    margin: 0 .7em;
+    color: abstracts.$dark;
+  }
+}
+
+#img-container {
+  grid-area: images;
+  position: relative;
+  width: 16em;
+  height: 18.75em;
+  overflow: hidden;
+  border-radius: 1em;
+  img {
+    position: absolute;
+    left: 0;
+    width: 17em;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+  }
+}
+#links {
+  grid-area: links;
+}
+
+

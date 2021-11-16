@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Sanchez&display=swap');
-
 body {
   margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas: "nav" "main" "footer";
+}
+
+main {
+  grid-area: main;
 }

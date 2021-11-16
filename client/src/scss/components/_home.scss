@@ -1,0 +1,23 @@
+@use '../abstracts';
+
+
+#hero-section {
+  display: flex;
+  text-align: center;
+  min-height: 39em;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: abstracts.$blue;
+  color: white;
+  padding-bottom: 3em;;
+  h1 {
+    font-family: abstracts.$large;
+    margin: 0 auto;
+    font-size: 4em;
+    line-height: 1.2em;
+  }
+  h3 {
+    font-size: 1.2em;
+    margin: 1em auto;
+  }
+}

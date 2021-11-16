@@ -1,14 +1,16 @@
 import { Link, useLocation } from "react-router-dom";
-import githubLogo from "../assets/GitHub-Mark/PNG/GitHub-Mark-32px.png";
-import linkedInLogo from "../assets/LinkedIn-Logos/LI-In-Bug.png";
+import githubLogoDark from "../assets/GitHub-Mark/dark.png";
+import linkedInLogoDark from "../assets/LinkedIn-Logos/dark.png";
+import githubLogoLight from "../assets/GitHub-Mark/white.png";
+import linkedInLogoLight from "../assets/LinkedIn-Logos/white.png";
 
 const Nav = () => {
   const location = useLocation();
-  const navClass = location.pathname === '/about-me' ? 'about-nav' : 'home-nav'
+  const navClass = location.pathname === '/about-me' ? 'about-nav' : 'home-nav';
 
   return (
     <nav className={navClass}>
-      <Link to="/">
+      <Link to="/" className='logo-link'>
         rachelperez<span id="dev">dev</span>
       </Link>
       {navClass === 'about-nav' ? (
@@ -20,11 +22,11 @@ const Nav = () => {
           About Me
         </Link>
       )}
-      <a href="https://github.com/raebaeb">
-        <img src={githubLogo} alt="Link to my GitHub profile" />
+      <a href="https://github.com/raebaeb" className='nav-link'>
+        <img src={navClass === 'about-nav' ? githubLogoLight : githubLogoDark} alt="Link to my GitHub profile" />
       </a>
-      <a href="https://www.linkedin.com/in/rachel-l-perez/">
-        <img src={linkedInLogo} alt="Link to my LinkedIn profile" />
+      <a href="https://www.linkedin.com/in/rachel-l-perez/" className='nav-link'>
+        <img src={navClass === "about-nav" ? linkedInLogoLight : linkedInLogoDark} alt="Link to my LinkedIn profile" />
       </a>
     </nav>
   );

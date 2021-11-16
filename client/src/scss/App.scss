@@ -1,13 +1,18 @@
+@use './abstracts';
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Sanchez&display=swap');
 @import './abstracts';
 @import './components';
 
+
 * {
   box-sizing: border-box;
+  font-family: abstracts.$small;
 }
 
 body {
   margin: 0;
   padding: 0;
+  width: 3och;
   display: grid;
   grid-template-areas:
   "nav"
@@ -17,4 +22,14 @@ body {
 
 main {
   grid-area: main;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: abstracts.$tablet) {
+  body {
+    background-color: green;
+  }
 }

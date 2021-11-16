@@ -1,7 +1,29 @@
+@use '../abstracts';
+
 nav {
+  display: flex;
+  height: 3em;
   grid-area: nav;
+  padding: .5em;
+  align-items: center;
 
   img {
     max-height: 2em;
   }
+}
+
+.home-nav {
+  a {
+    color: abstracts.$dark;
+  }
+}
+
+.logo-link {
+  font-family: abstracts.$large;
+  font-size: 1.5em;
+  margin: 0 auto;
+}
+
+.nav-link {
+  margin: 0 auto;
 }

@@ -22,7 +22,7 @@
   }
 }
 
-#img-container {
+#lrg-img-container {
   grid-area: images;
   width: 16em;
   height: 18.75em;
@@ -30,14 +30,6 @@
   border-radius: 1em;
 }
 
-.slide-container {
-  transform: translate(0);
-
-  width: 500%;
-  img {
-    width: 17em;
-  }
-}
 
 #links {
   grid-area: links;

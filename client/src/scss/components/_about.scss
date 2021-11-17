@@ -22,19 +22,22 @@
   }
 }
 
-#img-container {
+#selfie-img-container {
   grid-area: images;
   position: relative;
   width: 16em;
   height: 18.75em;
   overflow: hidden;
   border-radius: 1em;
-  img {
+  .selfie {
     position: absolute;
     left: 0;
     width: 17em;
     opacity: 0;
     transition: all 2s ease-in-out;
+  }
+  .active-selfie {
+    opacity: 1;
   }
 }
 #links {

@@ -1,20 +1,46 @@
-import React, { Component } from 'react';
-import selfie1 from "../assets/selfie1.jpg";
-import selfie2 from "../assets/selfie2.jpg";
-import selfie3 from "../assets/selfie3.jpg";
+import { useEffect, useState } from "react";
 
-class carousel extends Component {
+const Carousel = (props) => {
 
+  const imgType = props.imgType;
+  const imgList = props.imgList;
 
-  render() {
-    return (
-      <article id="img-container">
-        <img className='selfie-1 selfie' src={selfie1} alt="Selfie with friends" />
-        <img className='selfie-2 selfie' src={selfie3} alt="Just a selfie" />
-        <img className='selfie-3 selfie' src={selfie2} alt="Selfie with my dog Bisco" />
-      </article>
-    );
-  }
-}
+  const [activeImg, setActiveImg] = useState(null);
 
-export default carousel;
+  const setCurrentImage = () => {
+    const selectImg1 = document.querySelector(`.${imgType}`);
+    selectImg1.classList.add(`active-${imgType}`);
+    setActiveImg(document.querySelector(`.active-${imgType}`));
+    setInterval(function() {  
+      activeImg.classList.remove(`active-${imgType}`);
+      if (activeImg.nextElementSibling) {
+        console.log('setting to elem sibling')
+        setActiveImg(activeImg.nextElementSibling);
+      } else {
+        console.log('finding next elem')
+        setActiveImg(document.querySelector(`.${imgType}`));
+      }
+      activeImg.classList.add(`active-${imgType}`);
+      console.log(activeImg)
+    })
+  };
+  
+  useEffect(() => {
+    setCurrentImage();
+    }, [])
+
+  return (
+    <div className={`${imgType}-img-container`}>
+      {imgList.map((img, i) => (
+        <img
+          className={imgType}
+          src={img.src}
+          alt={img.altTxt}
+          key={i}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default Carousel;

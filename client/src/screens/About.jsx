@@ -5,7 +5,7 @@ import selfie3 from "../assets/selfie3.jpg";
 import ImgCrossfade from "../components/ImgCrossfade";
 
 const About = () => {
-  const isMobile = useMediaQuery({ query: `max-width: 760px` });
+  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
 
   const images = [
     { src: selfie1, alt: "Selfie with friends" },
@@ -25,7 +25,7 @@ const About = () => {
       </article>
       <h2>About Me</h2>
       {isMobile ? (
-        <ImgCrossfade imgList={images}/>
+        <ImgCrossfade imgList={images} timer={5000}/>
       ) : (
         <div id="lrg-img-container">
           {images.map((img, i) => (
@@ -45,7 +45,7 @@ const About = () => {
           window screen installment, dog training, and house renovation to name
           a few. I love using my hands and being creative in my day to day,
           really taking advantage of my background in fine arts to create
-          functional but beautiful things.{" "}
+          functional but beautiful things.
         </p>
         <p>
           Whether its a handmade wooden shelf, a digitally painted portrait, or

@@ -141,7 +141,7 @@
 
 @include m.mq(m.$desktop) {
   .dark {
-    grid-template-columns: 64% 2% 30%;
+    grid-template-columns: minmax(50em, 56em) minmax(1em, 1em) minmax(23em, 26.25em);
     text-align: right;
     .project-headerlinks {
       justify-content: right;
@@ -152,7 +152,7 @@
 
   }
   .light {
-    grid-template-columns: 30% 2% 64%;
+    grid-template-columns: 30% 2% minmax(50em, 56em);
     text-align: left;
     .project-headerlinks {
       justify-content: left;
@@ -166,6 +166,7 @@
     grid-template-rows: auto auto 0;
     max-height: 45em;
     padding: 4em 3.5em;
+    justify-content: center;
     img {
       height: 28em;
 

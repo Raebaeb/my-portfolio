@@ -37,3 +37,8 @@
   }
 }
 
+@include m.mq(m.$laptop) {
+  #hero-section {
+    min-height: 96vh;
+  }
+}

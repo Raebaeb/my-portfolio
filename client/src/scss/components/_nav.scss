@@ -19,20 +19,14 @@ nav {
 
 .about-nav{
   background-color: abs.$blue;
-  a, a:visited {
+  .nav-link, &:visited, .logo-link {
     color: white;
-  }
-  a:hover, a:active {
-    color: abs.$dark;
   }
 }
 
 .home-nav {
-  a {
+  .nav-link, &:visited, .logo-link {
     color: abs.$dark;
-  }
-  a:hover, a:active {
-    color: abs.$lightgreen;
   }
 }
 
@@ -45,6 +39,9 @@ nav {
   line-height: .5em;
   font-size: 1.2em;
   font-weight: 600;
+  &:hover, &:active {
+    color: abs.$lightgreen;
+  }
 }
 
 

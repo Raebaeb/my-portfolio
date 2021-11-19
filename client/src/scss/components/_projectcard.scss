@@ -39,10 +39,6 @@
   "description"
   "img";
   grid-gap: 1em;
-  a {
-    grid-area: title;
-    margin: 0 auto;
-  }
   p {
     margin: 0;
     grid-area: description;
@@ -53,6 +49,15 @@
     
   }
 }
+
+.project-headerlinks {
+  grid-area: title;
+}
+
+.project-github {
+  margin: 0 auto;
+}
+
 .project-title {
   font-family: abs.$large;
   font-size: 1.5em;
@@ -60,41 +65,124 @@
 
 @include m.mq(m.$tablet) {
   .dark {
+    grid-template-columns: 27em 2% auto;
     grid-template-areas: 
-    "img title"
-    "img description"
-    "img description";
-    img {
-      margin-right: 1em;
+    "img . title"
+    "img . description"
+    "img . description";
+    text-align: left;
+    justify-items: left;
+    .project-title {
+      margin-left: -.15em;
     }
   }
 
   .light {
+    grid-template-columns: auto 2% 27em;
     grid-template-areas: 
-    "title img"
-    "description img"
-    "description img";
-    img {
-      margin-left: 1em;
-    }
+    "title . img"
+    "description . img"
+    "description . img";
+    text-align: right;
+    justify-items: right;
   }
 
-  .project-container {
-    padding: 4em 2em;
-    article {
-      margin: auto 0;
-    }
-    span {
-      font-size: 1.8em;
-      padding: 0 2px 0 5px;
-    }
+.project-container {
+  grid-template-rows: 4.68em auto auto;
+  padding: 4em 2.5em;
+  grid-gap: 0;
+  img {
+    width: 27em;
   }
+  p {
+    margin-top: .5em;
+  }
+}
+
+.project-headerlinks  {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  grid-area: title;
+  margin: auto 0;
+  span {
+    display: none;
+  }
+}
 
   .project-github {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    margin: 0;
   }
 
   .project-title {
-    font-size: 2em;
+    font-size: 2.2em;
+    line-height: 1em;
+  }
+}
+
+@include m.mq(m.$laptop) {
+  .project-container {
+    max-height: 35em;
+    img {
+      height: 22em;
+      width: auto;
+    }
+  }
+  .light {
+    grid-template-columns: auto 2% auto;
+    justify-content: end;
+  }
+  .dark {
+    grid-template-columns: auto 2% auto;
+  }
+}
+
+@include m.mq(m.$desktop) {
+  .dark {
+    grid-template-columns: 64% 2% 30%;
+    text-align: right;
+    .project-headerlinks {
+      justify-content: right;
+    }
+    .project-title {
+      border-right: solid 2px white;
+    }
+
+  }
+  .light {
+    grid-template-columns: 30% 2% 64%;
+    text-align: left;
+    .project-headerlinks {
+      justify-content: left;
+    }
+    .project-title {
+      border-right: solid 2px abs.$dark;
+    }
+
+  }
+  .project-container {
+    grid-template-rows: auto auto 0;
+    max-height: 45em;
+    padding: 4em 3.5em;
+    img {
+      height: 28em;
+
+    }
+  }
+  .project-headerlinks {
+    flex-direction: row;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%
+  }
+  .project-title {
+    margin-right: 1px;
+    padding-right: .3em;
+    height: 18%;
+  }
+  .project-github {
+    margin: 0 .5em;
   }
 }

@@ -1,4 +1,5 @@
 @use "../abstracts" as abs;
+@use '../mixins/' as m;
 
 #about-me {
   display: grid;
@@ -14,28 +15,77 @@
   h2 {
     grid-area: title;
     font-family: abs.$large;
-    margin: 0;
-  }
-  a, a:visited {
-    margin: 0 .7em;
     color: abs.$dark;
-  }
-}
-
-#lrg-img-container {
-  grid-area: images;
-  width: 48em;
-  height: 26.6em;
-  overflow: hidden;
-  img {
-    width: 20em;
-    border-radius: 1em;
+    margin: 0;
   }
 }
 
 #links {
   grid-area: links;
   margin: 1em 0;
+  a, a:visited {
+    margin: 0 .7em;
+    color: abs.$dark;
+  }
 }
 
+@include m.mq(m.$tablet) {
+  .selfie0 {
+    display: none;
+  }
 
+  #about-me {
+    padding: 1em 2em;
+    h2 {
+      font-size: 2em;
+    }
+  }
+
+  #about-text {
+    max-width: 60ch;
+    p {
+      margin: .5em 0;
+    }
+  }
+
+  #lrg-img-container {
+    grid-area: images;
+    display: flex;
+    max-width: 42em;
+    justify-content: space-between;
+    height: 26.6em;
+    overflow: hidden;
+    img {
+      width: auto;
+      border-radius: 1em;
+      margin: 1em;
+    }
+  }
+}
+
+#links {
+  margin: 0 0 2em 0;
+  a {
+    margin: 0 1em;
+  }
+}
+
+@include m.mq(m.$laptop) {
+  .selfie0 {
+    display: initial;
+  }
+  #about-me {
+    h2 {
+      font-size: 3em;
+    }
+  }
+  #about-text {
+    max-width: 75ch;
+  }
+  #lrg-img-container {
+    justify-content: center;
+    max-height: 20em;
+    max-width: 60em;
+  }
+
+}

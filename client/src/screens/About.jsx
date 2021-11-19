@@ -5,7 +5,7 @@ import selfie3 from "../assets/selfie3.jpg";
 import ImgCrossfade from "../components/ImgCrossfade";
 
 const About = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: 759spx)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 759px)` });
 
   const images = [
     { src: selfie1, alt: "Selfie with friends" },

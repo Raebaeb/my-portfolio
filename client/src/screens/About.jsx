@@ -5,7 +5,7 @@ import selfie3 from "../assets/selfie3.jpg";
 import ImgCrossfade from "../components/ImgCrossfade";
 
 const About = () => {
-  const isMobile = useMediaQuery({ query: `(max-width: 760px)` });
+  const isMobile = useMediaQuery({ query: `(max-width: 759spx)` });
 
   const images = [
     { src: selfie1, alt: "Selfie with friends" },
@@ -29,7 +29,7 @@ const About = () => {
       ) : (
         <div id="lrg-img-container">
           {images.map((img, i) => (
-            <img key={i} src={img.src} alt={img.altTxt} />
+            <img key={i} src={img.src} alt={img.altTxt} className={`selfie${i}`}/>
           ))}
         </div>
       )}

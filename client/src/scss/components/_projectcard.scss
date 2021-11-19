@@ -1,24 +1,31 @@
-@use "../abstracts";
+@use "../abstracts" as abs;
+@use '../mixins/' as m;
 
 .dark {
-  background-color: abstracts.$blue;
+  background-color: abs.$blue;
   color: white;
   a, a:visited {
     color: white;
   }
+  a:hover, a:active {
+    color: abs.$lightgreen;
+  }
   img {
-  border: solid 2px abstracts.$lightgreen;
+  border: solid 2px abs.$lightgreen;
   }
 }
 
 .light {
   background-color: white;
-  color: abstracts.$dark;
+  color: abs.$dark;
   a, a:visited {
-    color: abstracts.$dark;
+    color: abs.$dark;
+  }
+  a:hover, a:active {
+    color: abs.$blue;
   }
   img {
-    border: solid 2px abstracts.$blue;
+    border: solid 2px abs.$blue;
   }
 }
 
@@ -36,9 +43,6 @@
     grid-area: title;
     margin: 0 auto;
   }
-  a:hover {
-    color: abstracts.$blue;
-  }
   p {
     margin: 0;
     grid-area: description;
@@ -48,9 +52,49 @@
     grid-area: img;
     
   }
-  .project-title {
-    font-family: abstracts.$large;
+}
+.project-title {
+  font-family: abs.$large;
+  font-size: 1.5em;
+}
+
+@include m.mq(m.$tablet) {
+  .dark {
+    grid-template-areas: 
+    "img title"
+    "img description"
+    "img description";
+    img {
+      margin-right: 1em;
+    }
+  }
+
+  .light {
+    grid-template-areas: 
+    "title img"
+    "description img"
+    "description img";
+    img {
+      margin-left: 1em;
+    }
+  }
+
+  .project-container {
+    padding: 4em 2em;
+    article {
+      margin: auto 0;
+    }
+    span {
+      font-size: 1.8em;
+      padding: 0 2px 0 5px;
+    }
+  }
+
+  .project-github {
     font-size: 1.5em;
   }
-  
+
+  .project-title {
+    font-size: 2em;
+  }
 }

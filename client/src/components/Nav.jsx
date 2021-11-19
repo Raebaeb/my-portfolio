@@ -11,7 +11,7 @@ const Nav = () => {
   return (
     <nav className={navClass}>
       <Link to="/" className='logo-link'>
-        rachelperez<span id="dev">dev</span>
+        <text id='rachelperez'>rachelperez<span id="dev">dev</span></text>
       </Link>
       {navClass === 'about-nav' ? (
         <Link to="/#projects" className="nav-link">
@@ -22,10 +22,10 @@ const Nav = () => {
           About Me
         </Link>
       )}
-      <a href="https://github.com/raebaeb" className='nav-link github'>
+      <a href="https://github.com/raebaeb" className='github'>
         <img src={navClass === 'about-nav' ? githubLogoLight : githubLogoDark} alt="Link to my GitHub profile" />
       </a>
-      <a href="https://www.linkedin.com/in/rachel-l-perez/" className='nav-link linkedin'>
+      <a href="https://www.linkedin.com/in/rachel-l-perez/" className='linkedin'>
         <img src={navClass === "about-nav" ? linkedInLogoLight : linkedInLogoDark} alt="Link to my LinkedIn profile" />
       </a>
     </nav>

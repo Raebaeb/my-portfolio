@@ -1,21 +1,25 @@
-@use './abstracts';
+@use './abstracts' as abs;
+@use './mixins/' as m;
 @import 'https://fonts.googleapis.com/css2?family=Pacifico&family=Sanchez&display=swap';
-@import './abstracts';
-@import './components';
-
+@import './abstracts', './components', './mixins';
 
 body {
   box-sizing: border-box;
-  font-family: abstracts.$small;
+  font-family: abs.$small;
   margin: 0;
   padding: 0;
-  display: grid;
+}
+
+.App {
   min-height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
   grid-template-areas:
   "nav"
-  "main"
-  "footer"
+  "main" 
+  "footer";
 }
+
 
 main {
   grid-area: main;
@@ -25,6 +29,8 @@ a {
   text-decoration: none;
 }
 
-@media only screen and (min-width: abstracts.$tablet) {
-
+@include m.mq(m.$tablet) {
+  .App {
+    grid-template-rows: 4em auto 2em;
+  }
 }

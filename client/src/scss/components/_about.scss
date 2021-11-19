@@ -1,4 +1,4 @@
-@use "../abstracts";
+@use "../abstracts" as abs;
 
 #about-me {
   display: grid;
@@ -13,18 +13,24 @@
   padding: 1em;
   h2 {
     grid-area: title;
-    font-family: abstracts.$large;
+    font-family: abs.$large;
     margin: 0;
   }
   a, a:visited {
     margin: 0 .7em;
-    color: abstracts.$dark;
+    color: abs.$dark;
   }
 }
 
 #lrg-img-container {
   grid-area: images;
-
+  width: 48em;
+  height: 26.6em;
+  overflow: hidden;
+  img {
+    width: 20em;
+    border-radius: 1em;
+  }
 }
 
 #links {

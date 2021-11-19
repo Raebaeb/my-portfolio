@@ -1,0 +1,9 @@
+$tablet: 47.5em;
+$laptop: 64em;
+$desktop: 87.5em;
+
+@mixin mq($screen) {
+  @media only screen and (min-width: $screen) {
+    @content
+  }
+}

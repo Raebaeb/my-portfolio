@@ -1,10 +1,11 @@
-@use '../abstracts';
+@use '../abstracts' as abs;
+@use '../mixins' as m;
 
 nav {
   display: flex;
   height: 2.5em;
   grid-area: nav;
-  padding: .5em;
+  padding: .5em 1em;
   align-items: center;
 
   img {
@@ -17,28 +18,25 @@ nav {
 }
 
 .about-nav{
-  background-color: abstracts.$blue;
+  background-color: abs.$blue;
   a, a:visited {
     color: white;
   }
   a:hover, a:active {
-    color: abstracts.$dark;
+    color: abs.$dark;
   }
 }
 
 .home-nav {
   a {
-    color: abstracts.$dark;
+    color: abs.$dark;
   }
   a:hover, a:active {
-    color: abstracts.$lightgreen;
+    color: abs.$lightgreen;
   }
 }
 
 .logo-link {
-  font-family: abstracts.$large;
-  font-size: 1.5em;
-  margin: 0 auto;
   display: none;
 }
 
@@ -47,4 +45,39 @@ nav {
   line-height: .5em;
   font-size: 1.2em;
   font-weight: 600;
+}
+
+
+@include m.mq(m.$tablet) {
+  nav {
+    height: 3em;
+    justify-content: right;
+    padding: .5em 1em;
+  }
+
+  .github, .linkedin {
+    margin: 0 0 0 1em;
+    order: 0;
+  }
+  .logo-link {
+    font-family: abs.$large;
+    font-size: 2em;
+    display: contents;
+    text {
+      margin-right: auto;
+    }
+  }
+  .nav-link {
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: normal;
+  }
+  #dev { 
+    font-family: abs.$small;
+    padding-bottom: .2em;
+  }
+
+  #rachelperez {
+    padding-bottom: .36em;
+  }
 }

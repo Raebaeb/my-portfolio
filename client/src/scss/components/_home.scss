@@ -1,5 +1,5 @@
-@use '../abstracts';
-
+@use '../abstracts' as abs;
+@use '../mixins' as m;
 
 #hero-section {
   display: flex;
@@ -7,11 +7,11 @@
   min-height: 39em;
   flex-wrap: wrap;
   align-content: center;
-  background-color: abstracts.$blue;
+  background-color: abs.$blue;
   color: white;
   padding-bottom: 3em;;
   h1 {
-    font-family: abstracts.$large;
+    font-family: abs.$large;
     margin: 0 auto;
     font-size: 4em;
     line-height: 1.2em;
@@ -21,3 +21,19 @@
     margin: 1em auto;
   }
 }
+
+@include m.mq(m.$tablet) {
+  #hero-section {
+    flex-direction: column;
+    justify-content: center;
+    min-height: 28em;
+    h1 {
+      font-size: 5em;
+    }
+    h3 {
+    font-weight: normal;
+    font-size: 1.5em;
+    }
+  }
+}
+

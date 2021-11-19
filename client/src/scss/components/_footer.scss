@@ -1,10 +1,19 @@
-@use '../abstracts';
+@use '../abstracts' as abs;
+@use '../mixins' as m;
 
 footer {
-  background-color: abstracts.$blue;
+  background-color: abs.$blue;
   color: white;
   text-align: center;
   font-size: .6em;
   padding: .3em 0;
   grid-area: footer;
+}
+
+
+@include m.mq(m.$tablet) {
+  footer {
+    font-size: .8em;
+    padding: .8em 0;
+  }
 }

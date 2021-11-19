@@ -14,9 +14,9 @@ const Nav = () => {
         <text id='rachelperez'>rachelperez<span id="dev">dev</span></text>
       </Link>
       {navClass === 'about-nav' ? (
-        <Link to="/#projects" className="nav-link">
+        <a href='http://rachelperez.dev/#projects' className="nav-link">
           Projects
-        </Link>
+        </a>
       ) : (
         <Link to="/about-me" className="nav-link">
           About Me
